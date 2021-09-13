@@ -1,0 +1,139 @@
+* {
+  margin: 0;
+  padding: 0;
+  font-family: "Commissioner", sans-serif;
+}
+
+.bold {
+  font-weight: bold;
+}
+
+body {
+  background-color: #f1f1f1;
+}
+
+.image-div {
+  background-image: url(images/image-hero-desktop.jpg);
+  max-width: 100%;
+  height: 25rem;
+}
+.image-div nav {
+  height: 120px;
+  line-height: 120px;
+  padding: 0 10rem;
+}
+.image-div nav .bars {
+  display: none;
+}
+.image-div .logo {
+  font-size: 1.5rem;
+  font-weight: bold;
+  text-decoration: none;
+}
+.image-div .link-pages a {
+  font-size: 0.89rem;
+  text-decoration: none;
+  margin: 0 0.8rem;
+}
+
+main {
+  width: 100%;
+}
+main .card-custom {
+  max-width: 700px;
+  margin: -5rem auto 0 auto;
+  border-radius: 0.5rem;
+}
+main .card-custom .svg {
+  margin: -1.5rem auto 0 auto;
+}
+main .card-custom .body-custom p:nth-child(2) {
+  font-size: 0.95rem;
+  margin-top: -0.5rem;
+}
+main .card-custom .body-custom section {
+  position: relative;
+}
+main .card-custom .body-custom section button {
+  border: none;
+  outline: none;
+  border-radius: 50px;
+}
+main .card-custom .body-custom section .btn1 {
+  background-color: #3cb4ac;
+  font-size: 0.85rem;
+}
+main .card-custom .body-custom section .btn1:hover {
+  background-color: #147b74;
+}
+main .card-custom .body-custom section .btn-wrapper {
+  position: relative;
+}
+main .card-custom .body-custom section .btn-wrapper .btn2 {
+  background-color: #f1f1f1;
+  font-weight: bold;
+  padding: 0 1.5rem 0 4.5rem;
+}
+main .card-custom .body-custom .svg1 {
+  position: absolute;
+  left: 0;
+}
+main .card-custom1, main .card-custom2 {
+  max-width: 700px;
+  border-radius: 0.5rem;
+  margin: 0 auto;
+}
+main .card-custom1 .body-custom1 .stats section, main .card-custom2 .body-custom1 .stats section {
+  border-right: 2px solid #f2f2f2;
+}
+main .card-custom1 .body-custom1 .stats .last-section, main .card-custom2 .body-custom1 .stats .last-section {
+  border: none;
+}
+main .card-custom1 .body-custom1 .bg, main .card-custom2 .body-custom1 .bg {
+  background-color: #3cb4ac;
+}
+main .card-custom3 h4 {
+  font-weight: bold;
+}
+
+@media screen and (max-width: 769px) {
+  .image-div nav {
+    padding: 0 3rem;
+  }
+  .image-div nav .bars {
+    display: block;
+  }
+  .image-div nav .link-pages {
+    display: none;
+  }
+}
+@media screen and (max-width: 375px) {
+  .image-div nav {
+    padding: 0 1rem;
+  }
+
+  main .body-custom .btn-wrapper {
+    position: relative;
+  }
+
+  main .body-custom .btn-wrapper .btn2 {
+    display: none;
+  }
+
+  section .btn-wrapper {
+    margin-right: 4rem;
+  }
+
+  section .btn-wrapper .svg1 {
+    position: absolute;
+  }
+
+  main .body-custom1 .stats {
+    text-align: center;
+  }
+  main .body-custom1 .stats section {
+    border: none;
+  }
+}
+
+/*# sourceMappingURL=stlye.css.map */

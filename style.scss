@@ -1,0 +1,373 @@
+$active-state:  hsl(176, 72%, 28%);
+$default-state:  hsl(176, 50%, 47%);
+$Black: hsl(0 0% 0%);
+$Dark-gray: hsl(0, 0%, 48%);
+$font-size: 16px;
+$desktop: 1440px;
+$tablet: 769px;
+$mobile: 450px;
+$font-fam: 'Commissioner', sans-serif;
+
+*{
+    margin: 0;
+    padding: 0;
+    font-family: $font-fam;
+    font-size: $font-size;
+}
+.bold{
+    font-weight: bold;
+}
+body{
+    background-color: #f1f1f1;
+}
+// Navbar
+.image-div{
+    background-image: url(images/image-hero-desktop.jpg);
+    max-width: 100%;
+    height: 25rem;
+    nav{
+        height: 120px;
+        line-height: 120px;
+        padding: 0 10rem;
+        .bars{
+            display: none;
+        }
+    }
+    .logo{
+        font-size: 1.5rem;
+        font-weight: bold;
+        text-decoration: none;
+    }
+    .link-pages a{
+        font-size: .89rem;
+        text-decoration: none;
+        margin: 0 .8rem;
+    }
+    
+}
+
+// body
+main{
+    width: 100%;
+    .card-custom{
+        max-width: 700px;
+        margin: -5rem auto 0 auto;
+        border-radius: .5rem;
+        .svg{
+            margin: -1.5rem auto 0 auto;
+        }
+        .body-custom {
+           
+            p:nth-child(1){
+                font-size: 1.5rem;
+                font-weight: bold;
+            }
+            p:nth-child(2){
+                font-size: .95rem;
+                margin-top: -.5rem;
+            }
+            section{
+                position: relative;
+
+            }
+            section button{
+                border: none;
+                outline: none;
+                border-radius: 50px;
+                width: 11rem;
+                height: 3.6rem;
+            }
+            
+            section .btn1{
+                background-color: $default-state;
+                font-size: .85rem;
+            }
+            section .btn1:hover{
+                background-color: $active-state;
+            }
+            section .btn-wrapper{
+                position: relative;
+                
+            }
+            section .btn-wrapper .btn2{
+                background-color: #f1f1f1;
+                font-weight: bold;
+                padding: 0 1.5rem 0 4.5rem;
+            }
+            .svg1{
+                position: absolute;
+                left: 0;    
+            }
+        } 
+    }
+
+    // card 2
+    .card-custom1, .card-custom2{
+        max-width: 700px;
+        border-radius: .5rem;
+        margin: 0 auto;
+        .body-custom1 .stats section{
+            border-right: 2px solid #f2f2f2;
+            padding: 0 0 0 2rem;
+        }
+        .body-custom1 .stats .last-section{
+            border: none;
+        }
+        .body-custom1 .bar{
+            border-radius: 7px;
+            .bg{
+                background-color: $default-state;
+                border-radius: 7px;
+            }
+        }
+    }
+
+    // card 3
+    .card-custom3 h4{
+        font-weight: bold;
+    }
+    .card-custom3 .bamboo{
+        width: 13rem;
+    }
+    .card-custom3 .pledge{
+        color: $default-state;
+    }
+    .card-custom3 h1{
+        width: 12rem;
+    }
+    .card-custom3 button{
+        border: none;
+        outline: none;
+        border-radius: 50px;
+        width: 10rem;
+        height: 3.2rem;
+        background-color: $default-state;
+        color: #fff;
+        font-size: .9rem;
+    }
+
+    .modal-custom {
+        display: none; /* Hidden by default */
+        position: fixed; /* Stay in place */
+        z-index: 1; /* Sit on top */
+        padding-top: 5rem; /* Location of the box */
+        left: 0;
+        top: 0;
+        width: 100%; /* Full width */
+        height: 100%; /* Full height */
+        overflow: auto; /* Enable scroll if needed */
+        background-color: rgb(0,0,0); /* Fallback color */
+        background-color: rgba(0,0,0,0.4); /* Black w/ opacity */
+    }
+
+    .modal-body-custom {
+        position: relative;
+        background-color: #fefefe;
+        margin: auto;
+        padding: 1rem 2rem;
+        border: none;
+        outline: none;
+        width: 52%;
+        border-radius: .35rem;
+        // box-shadow: 0 1px 3px 0 rgba(0,0,0,0.2),0 6px 20px 0 rgba(0,0,0,0.19);
+        -webkit-animation-name: animatetop;
+        -webkit-animation-duration: 0.4s;
+        animation-name: animatetop;
+        animation-duration: 0.4s;
+        h5{
+            font-size: 1.2rem;
+            margin-top: .7rem;
+        }
+        p{
+            font-size: .85rem;
+        }
+       
+        .container-custom {
+            display: block;
+            position: relative;
+            top: 10px;
+            padding-left: 2rem;
+            margin-bottom: 12px;
+            cursor: pointer;
+            font-size: .9rem;
+            -webkit-user-select: none;
+            -moz-user-select: none;
+            -ms-user-select: none;
+            user-select: none;
+          }
+          
+          /* Hide the browser's default checkbox */
+          .container-custom input {
+            position: absolute;
+            opacity: 0;
+            cursor: pointer;
+            height: 0;
+            width: 0;
+          }
+          
+          /* Create a custom checkbox */
+          .checkmark {
+            position: absolute;
+            top: 0;
+            left: 0;
+            height: 20px;
+            width: 20px;
+            background-color: #fff;
+            border-radius: 50%;
+            border: .1rem solid grey ;
+          }
+          
+          /* On mouse-over, add a grey background color */
+          
+          .container-custom > strong:hover,.container-custom > .checkmark:hover {
+              color: $active-state;
+          }
+          .container-custom:hover input ~ .checkmark {
+            border-color: $active-state;
+          }
+          
+          /* When the checkbox is checked, add a blue background */
+          .container-custom input:checked ~ .checkmark {
+            background-color: #fff;
+          }
+          
+          /* Create the checkmark/indicator (hidden when not checked) */
+          .checkmark:after {
+            content: "";
+            position: absolute;
+            display: none;
+          }
+          
+          /* Show the checkmark when checked */
+          .container-custom input:checked ~ .checkmark:after {
+            display: block;
+          }
+          
+          /* Style the checkmark/indicator */
+          .container-custom .checkmark:after {
+            left: 2.5px;
+            top: 1.9px;
+            width: 12px;
+            height: 12px;
+            border-radius: 50%;
+            background-color: $active-state;
+           
+          }
+        .select{
+            border: 1px solid #eee;
+            border-radius: 5px;
+            padding: 1rem 1rem 0 1rem;
+        }
+        .select p{
+            margin-left: 2rem;
+        }   
+        .container-custom span{
+            color: $active-state;
+            padding-left: .6rem;
+        }
+    }
+
+    @-webkit-keyframes animatetop {
+        from {top:-300px; opacity:0} 
+        to {top:0; opacity:1}
+    }
+      
+    @keyframes animatetop {
+        from {top:-300px; opacity:0}
+        to {top:0; opacity:1}
+    }
+      
+    /* The Close Button */
+    .close {
+        color: darkgray;
+        float: right;
+        margin-top: -.9rem;
+        font-size: 1.7rem;
+        font-weight: bold;
+    }
+      
+    .close:hover,
+    .close:focus {
+        color: $active-state;
+        text-decoration: none;
+        cursor: pointer;
+    }
+      
+    .modal-header {
+        padding: 2px 16px;
+        background-color: #5cb85c;
+        color: white;
+    }
+      
+    .modal-body {padding: 2px 16px;}
+      
+    .modal-footer {
+        padding: 2px 16px;
+        background-color: #5cb85c;
+        color: white;
+    }
+}
+
+
+
+
+@media  screen and (max-width: $tablet){
+    .image-div nav{
+        padding: 0 3rem; 
+        .bars{
+            display: block;
+        }
+        .link-pages{
+            display: none;
+        }
+    }
+    .stat-sec{   
+        border-right: none !important;
+    } 
+   
+
+}
+@media  screen and (max-width: $mobile){
+    .image-div nav{
+        padding: 0 1rem; 
+    }
+    // bookmark card
+    main .body-custom .btn-wrapper{
+        position: relative;
+    }
+    main .body-custom .btn-wrapper .btn2{
+      display: none;
+    }
+    main .body-custom > section{
+        margin: 0 -1rem;
+    }
+    section .btn-wrapper{
+        margin-right: 4rem;
+    }
+    section .btn-wrapper .svg1{
+        position: absolute;
+       
+    }
+    // progress bar card
+    main .body-custom1{
+        padding-left: 1rem;
+        .bar{
+            margin: 0 .7rem !important;
+        }
+        .stats{
+            font-size: .9rem;
+            text-align: center;
+            .stat-sec{   
+                border-right: none !important;
+            } 
+            section{
+                padding-left: 0 !important;
+            }
+        }
+       
+    }
+    // .card-custom3 .pledge{
+    //     text-align: left !important;
+    // }
+    
+}
