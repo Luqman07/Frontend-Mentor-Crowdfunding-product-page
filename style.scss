@@ -150,7 +150,7 @@ main{
         display: none; /* Hidden by default */
         position: fixed; /* Stay in place */
         z-index: 1; /* Sit on top */
-        padding-top: 5rem; /* Location of the box */
+        padding-top: 2rem; /* Location of the box */
         left: 0;
         top: 0;
         width: 100%; /* Full width */
@@ -253,13 +253,44 @@ main{
             background-color: $active-state;
            
           }
-        .select{
+        .option-no-reward, .option-bamboo, .black-edition{
             border: 1px solid #eee;
             border-radius: 5px;
             padding: 1rem 1rem 0 1rem;
         }
-        .select p{
+        .option-bamboo > p, .option-no-reward > p, .black-edition > p{
             margin-left: 2rem;
+        }
+        .option-bamboo, .black-edition{
+            position: relative;
+            > p{
+                margin-bottom: 2rem;
+            }
+            .pledge-entry{
+                padding: 1.7rem 0;
+                // display: none;
+                .pledge-input{
+                    width: 5rem;
+                    height: 2.4rem;
+                    outline: none;
+                    border: 1px solid lightgray;
+                    border-radius: 5rem;
+                    padding: 0 1.5rem;
+                    font-size: .8rem;
+                    font-weight: bold;
+                }
+                .btnn{
+                    background-color: $default-state;
+                    color: #fff;
+                    border-radius: 5rem;
+                    padding: .5rem 1.5rem;
+                    font-size: .8rem;
+                    font-weight: bold;
+                }
+                .btnn:hover{
+                    background-color: $active-state;
+                }
+            }
         }   
         .container-custom span{
             color: $active-state;

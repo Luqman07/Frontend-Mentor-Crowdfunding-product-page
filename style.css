@@ -134,7 +134,7 @@ main .modal-custom {
   /* Stay in place */
   z-index: 1;
   /* Sit on top */
-  padding-top: 5rem;
+  padding-top: 2rem;
   /* Location of the box */
   left: 0;
   top: 0;
@@ -232,13 +232,43 @@ main .modal-body-custom .container-custom .checkmark:after {
   border-radius: 50%;
   background-color: #147b74;
 }
-main .modal-body-custom .select {
+main .modal-body-custom .option-no-reward, main .modal-body-custom .option-bamboo, main .modal-body-custom .black-edition {
   border: 1px solid #eee;
   border-radius: 5px;
   padding: 1rem 1rem 0 1rem;
 }
-main .modal-body-custom .select p {
+main .modal-body-custom .option-bamboo > p, main .modal-body-custom .option-no-reward > p, main .modal-body-custom .black-edition > p {
   margin-left: 2rem;
+}
+main .modal-body-custom .option-bamboo, main .modal-body-custom .black-edition {
+  position: relative;
+}
+main .modal-body-custom .option-bamboo > p, main .modal-body-custom .black-edition > p {
+  margin-bottom: 2rem;
+}
+main .modal-body-custom .option-bamboo .pledge-entry, main .modal-body-custom .black-edition .pledge-entry {
+  padding: 1.7rem 0;
+}
+main .modal-body-custom .option-bamboo .pledge-entry .pledge-input, main .modal-body-custom .black-edition .pledge-entry .pledge-input {
+  width: 5rem;
+  height: 2.4rem;
+  outline: none;
+  border: 1px solid lightgray;
+  border-radius: 5rem;
+  padding: 0 1.5rem;
+  font-size: 0.8rem;
+  font-weight: bold;
+}
+main .modal-body-custom .option-bamboo .pledge-entry .btnn, main .modal-body-custom .black-edition .pledge-entry .btnn {
+  background-color: #3cb4ac;
+  color: #fff;
+  border-radius: 5rem;
+  padding: 0.5rem 1.5rem;
+  font-size: 0.8rem;
+  font-weight: bold;
+}
+main .modal-body-custom .option-bamboo .pledge-entry .btnn:hover, main .modal-body-custom .black-edition .pledge-entry .btnn:hover {
+  background-color: #147b74;
 }
 main .modal-body-custom .container-custom span {
   color: #147b74;
