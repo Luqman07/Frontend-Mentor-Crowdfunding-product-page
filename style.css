@@ -9,6 +9,20 @@
   font-weight: bold;
 }
 
+.split {
+  display: flex;
+}
+
+.card-border-green {
+  border: 2px solid #3cb4ac;
+  border-radius: 5px;
+}
+
+.card-border-grey {
+  border: 2px solid #dee2e6;
+  border-radius: 5px;
+}
+
 body {
   background-color: #f1f1f1;
 }
@@ -153,122 +167,141 @@ main .modal-body-custom {
   position: relative;
   background-color: #fefefe;
   margin: auto;
-  padding: 1rem 2rem;
+  padding: 1rem;
   border: none;
   outline: none;
-  width: 52%;
+  width: 92%;
   border-radius: 0.35rem;
   -webkit-animation-name: animatetop;
   -webkit-animation-duration: 0.4s;
   animation-name: animatetop;
   animation-duration: 0.4s;
-  /* Hide the browser's default checkbox */
-  /* Create a custom checkbox */
-  /* On mouse-over, add a grey background color */
-  /* When the checkbox is checked, add a blue background */
-  /* Create the checkmark/indicator (hidden when not checked) */
-  /* Show the checkmark when checked */
-  /* Style the checkmark/indicator */
 }
 main .modal-body-custom h5 {
   font-size: 1.2rem;
   margin-top: 0.7rem;
 }
-main .modal-body-custom p {
-  font-size: 0.85rem;
+main .modal-body-custom .heading {
+  display: flex;
+  justify-content: space-between;
 }
-main .modal-body-custom .container-custom {
+main .modal-body-custom .close {
+  color: darkgray;
+  font-size: 1.4rem;
+  font-weight: bold;
+  margin-top: -0.1rem;
+  align-self: flex-start;
+}
+main .modal-body-custom .close:hover,
+main .modal-body-custom .close:focus {
+  color: #147b74;
+  text-decoration: none;
+  cursor: pointer;
+}
+main .modal-body-custom .heading > p {
+  font-size: 1.1rem;
+  font-weight: bold;
+}
+main .modal-body-custom .content .no-reward {
+  padding: 1rem;
+  border-radius: 5px;
+}
+main .modal-body-custom .no-reward p, main .modal-body-custom .card-default p {
+  margin-top: 0.7rem;
+}
+main .modal-body-custom .content .container-custom {
   display: block;
   position: relative;
-  top: 10px;
   padding-left: 2rem;
-  margin-bottom: 12px;
+  font-weight: bold;
+  background-color: #fff;
   cursor: pointer;
-  font-size: 0.9rem;
-  -webkit-user-select: none;
-  -moz-user-select: none;
-  -ms-user-select: none;
   user-select: none;
+}
+main .modal-body-custom .container-custom:hover {
+  color: #3cb4ac;
 }
 main .modal-body-custom .container-custom input {
   position: absolute;
   opacity: 0;
-  cursor: pointer;
-  height: 0;
-  width: 0;
 }
-main .modal-body-custom .checkmark {
+main .modal-body-custom .no-reward .container-custom .checkmark, main .modal-body-custom .card-default .container-custom .checkmark {
   position: absolute;
   top: 0;
   left: 0;
-  height: 20px;
   width: 20px;
-  background-color: #fff;
+  height: 20px;
   border-radius: 50%;
-  border: 0.1rem solid grey;
+  border: 1px solid gray;
 }
-main .modal-body-custom .container-custom > strong:hover, main .modal-body-custom .container-custom > .checkmark:hover {
-  color: #147b74;
+main .modal-body-custom .container-custom:hover .checkmark {
+  border: 1px solid #3cb4ac;
 }
-main .modal-body-custom .container-custom:hover input ~ .checkmark {
-  border-color: #147b74;
+main .modal-body-custom .content .container-custom .checkmark:hover {
+  border: 1px solid #3cb4ac;
 }
-main .modal-body-custom .container-custom input:checked ~ .checkmark {
-  background-color: #fff;
+main .modal-body-custom .checkmark:hover {
+  border-color: #3cb4ac;
 }
-main .modal-body-custom .checkmark:after {
+main .modal-body-custom .container-custom .checkmark:after {
   content: "";
   position: absolute;
   display: none;
 }
-main .modal-body-custom .container-custom input:checked ~ .checkmark:after {
-  display: block;
-}
-main .modal-body-custom .container-custom .checkmark:after {
-  left: 2.5px;
-  top: 1.9px;
+main .modal-body-custom .checkmark:after {
+  top: 9px;
+  right: 3px;
   width: 12px;
   height: 12px;
+  margin-top: -6px;
   border-radius: 50%;
-  background-color: #147b74;
 }
-main .modal-body-custom .option-no-reward, main .modal-body-custom .option-bamboo, main .modal-body-custom .black-edition {
-  border: 1px solid #eee;
-  border-radius: 5px;
-  padding: 1rem 1rem 0 1rem;
-}
-main .modal-body-custom .option-bamboo > p, main .modal-body-custom .option-no-reward > p, main .modal-body-custom .black-edition > p {
-  margin-left: 2rem;
-}
-main .modal-body-custom .option-bamboo, main .modal-body-custom .black-edition {
-  position: relative;
-}
-main .modal-body-custom .option-bamboo > p, main .modal-body-custom .black-edition > p {
-  margin-bottom: 2rem;
-}
-main .modal-body-custom .option-bamboo .pledge-entry, main .modal-body-custom .black-edition .pledge-entry {
-  padding: 1.7rem 0;
-}
-main .modal-body-custom .option-bamboo .pledge-entry .pledge-input, main .modal-body-custom .black-edition .pledge-entry .pledge-input {
-  width: 5rem;
-  height: 2.4rem;
-  outline: none;
-  border: 1px solid lightgray;
-  border-radius: 5rem;
-  padding: 0 1.5rem;
-  font-size: 0.8rem;
-  font-weight: bold;
-}
-main .modal-body-custom .option-bamboo .pledge-entry .btnn, main .modal-body-custom .black-edition .pledge-entry .btnn {
+main .modal-body-custom .container-custom > input:checked ~ .checkmark:after {
   background-color: #3cb4ac;
-  color: #fff;
-  border-radius: 5rem;
-  padding: 0.5rem 1.5rem;
-  font-size: 0.8rem;
-  font-weight: bold;
+  display: block;
 }
-main .modal-body-custom .option-bamboo .pledge-entry .btnn:hover, main .modal-body-custom .black-edition .pledge-entry .btnn:hover {
-  background-color: #147b74;
+main .modal-body-custom .content .no-reward {
+  width: 100%;
+}
+main .modal-body-custom .card-default {
+  padding: 1rem;
+}
+main .modal-body-custom .card-default .splitt > span {
+  margin-left: 2rem;
+  color: #3cb4ac;
+}
+main .modal-body-custom .black-wrapper .pledge-entry, main .modal-body-custom .bamboo-wrapper .pledge-entry {
+  padding: 1.5rem;
+  border-radius: 0 0 5px 5px;
+  border-top: 1px solid #dee2e6;
+  margin-top: -0.2rem;
+}
+main .modal-body-custom .black-wrapper .pledge-entry input, main .modal-body-custom .bamboo-wrapper .pledge-entry input {
+  width: 4.5rem;
+  height: 2.5rem;
+  border: 1px solid gray;
+  outline: none;
+  border-radius: 10rem;
+  font-weight: bold;
+  padding: 0 0.9rem;
+}
+main .modal-body-custom .black-wrapper .pledge-entry button, main .modal-body-custom .bamboo-wrapper button {
+  background-color: #3cb4ac;
+  padding: 0.5rem 0.9rem;
+  outline: none;
+  border: none;
+  border-radius: 10rem;
+  color: #fff;
+}
+main .modal-body-custom .mahoghany-wrapper {
+  opacity: 0.5;
+  cursor: not-allowed;
+}
+main .modal-body-custom .content p {
+  font-size: 0.9rem;
+}
+main .modal-body-custom .content label, main .modal-body-custom .content .splitt > span strong {
+  font-size: 0.95rem;
 }
 main .modal-body-custom .container-custom span {
   color: #147b74;
@@ -293,32 +326,6 @@ main .modal-body-custom .container-custom span {
     top: 0;
     opacity: 1;
   }
-}
-main .close {
-  color: darkgray;
-  float: right;
-  margin-top: -0.9rem;
-  font-size: 1.7rem;
-  font-weight: bold;
-}
-main .close:hover,
-main .close:focus {
-  color: #147b74;
-  text-decoration: none;
-  cursor: pointer;
-}
-main .modal-header {
-  padding: 2px 16px;
-  background-color: #5cb85c;
-  color: white;
-}
-main .modal-body {
-  padding: 2px 16px;
-}
-main .modal-footer {
-  padding: 2px 16px;
-  background-color: #5cb85c;
-  color: white;
 }
 
 @media screen and (max-width: 769px) {
