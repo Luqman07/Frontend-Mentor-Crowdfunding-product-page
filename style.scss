@@ -4,7 +4,7 @@ $Black: hsl(0 0% 0%);
 $Dark-gray: hsl(0, 0%, 48%);
 $font-size: 16px;
 $desktop: 1440px;
-$tablet: 769px;
+$tablet: 750px;
 $mobile: 450px;
 $font-fam: 'Commissioner', sans-serif;
 
@@ -17,8 +17,9 @@ $font-fam: 'Commissioner', sans-serif;
 .bold{
     font-weight: bold;
 }
-.split{
+.splitt{
     display: flex;
+    flex-direction: column;
 }
 .card-border-green{
     border: 2px solid $default-state ;
@@ -28,9 +29,6 @@ $font-fam: 'Commissioner', sans-serif;
     border: 2px solid #dee2e6 ;
     border-radius: 5px;
 }
-// .card-radius{
-//     border-radius: 15px;
-// }
 body{
     background-color: #f1f1f1;
 }
@@ -39,24 +37,53 @@ body{
     background-image: url(images/image-hero-desktop.jpg);
     max-width: 100%;
     height: 25rem;
+    padding: 0rem;
+
+    .nav-container{
+        display: flex;
+        justify-content: space-between;
+        padding: 4.2rem 3rem;
+    }
+    .nav-wrapper{
+        width: 100%;
+        position: fixed;
+        display: none;
+        top: 100px;
+        left: 0rem;
+        padding: 0 1rem;
+        z-index: 100;
+       
+    }
     nav{
-        height: 120px;
-        line-height: 120px;
-        padding: 0 10rem;
-        .bars{
-            display: none;
-        }
+        background-color: #fff;
+        border-radius: 5px;
+        padding: 0.2rem 0rem;
+        width: 100%;
+        margin: 0 auto;
     }
-    .logo{
-        font-size: 1.5rem;
-        font-weight: bold;
+    nav ul{
+        padding: 0;
+        margin: 0;
+        list-style: none;
+    }
+    nav li{
+        padding: 1em;
+    }
+    nav li:nth-child(2){
+        border-top: 1px solid #dee2e6;
+        border-bottom: 1px solid #dee2e6;
+    }
+    nav a{
+        color: #000;
         text-decoration: none;
+        font-size: 1.1rem;
     }
-    .link-pages a{
-        font-size: .89rem;
-        text-decoration: none;
-        margin: 0 .8rem;
+    .nav-toggle{
+        display: none;
     }
+    .nav-toggle:checked ~ .nav-wrapper {
+        display: block;
+    }    
     
 }
 
@@ -164,7 +191,8 @@ main{
         display: none; /* Hidden by default */
         position: fixed; /* Stay in place */
         z-index: 1; /* Sit on top */
-        padding-top: 2rem; /* Location of the box */
+        // padding-top: 2rem; /* Location of the box */
+        padding: 2rem 1rem 0 1rem;
         left: 0;
         top: 0;
         width: 100%; /* Full width */
@@ -181,16 +209,15 @@ main{
         padding: 1rem ;
         border: none;
         outline: none;
-        width: 92%;
+        width: 100%;
         border-radius: .35rem;
-        // box-shadow: 0 1px 3px 0 rgba(0,0,0,0.2),0 6px 20px 0 rgba(0,0,0,0.19);
+        box-shadow: 0 1px 3px 0 rgba(0,0,0,0.2),0 6px 20px 0 rgba(0,0,0,0.19);
         -webkit-animation-name: animatetop;
         -webkit-animation-duration: 0.4s;
         animation-name: animatetop;
         animation-duration: 0.4s;
-        h5{
-            font-size: 1.2rem;
-            margin-top: .7rem;
+        *{
+            font-size: .92rem;
         }
         // modal heading
         .heading{
@@ -261,9 +288,8 @@ main{
             content: "";
             position: absolute;
             display: none;
-           
-            
         }
+
         .checkmark:after{
             top: 9px;
             right: 3px;
@@ -271,8 +297,6 @@ main{
             height: 12px;
             margin-top: -6px;
             border-radius: 50%;
-            
-        
         }
         .container-custom > input:checked ~ .checkmark:after{
             background-color: $default-state;
@@ -318,21 +342,8 @@ main{
             opacity: .5;
             cursor: not-allowed;
         }
-
-
-
-
-        // Modal font-size
-        .content p{
-            font-size: .9rem;
-        }
-        .content label, .content .splitt > span strong{
-            font-size: .95rem;
-        }
        
-       
-        
-           
+  
         .container-custom span{
             color: $active-state;
             padding-left: .6rem;
@@ -349,36 +360,82 @@ main{
         to {top:0; opacity:1}
     }
       
-    /* The Close Button */
-   
-      
-  
+    /* The Close Button */  
 }
 
-
-
-
-@media  screen and (max-width: $tablet){
-    .image-div nav{
-        padding: 0 3rem; 
-        .bars{
-            display: block;
+@media  screen and (min-width: $tablet){
+    *{
+        margin: 0;
+        padding: 0;
+        box-sizing: border-box;
+    }
+    .nav-toggle-label{
+        display: none;
+    }
+    .image-div .nav-container{
+        display: flex;
+        justify-content: space-between;
+        padding: 3rem 6rem;
+        .logo-wrapper{
+            align-self: center;
         }
-        .link-pages{
-            display: none;
+        .nav-wrapper{
+            all: unset;
+            nav{
+                background-color: transparent;
+                ul{
+                    display: flex;
+                }
+                li:nth-child(2){
+                    border: none;
+                }
+            }
+            nav a{
+                opacity: 1;
+                color: #fff ;
+            }
+        }
+
+    }
+   
+     
+    .nav-wrapper
+    .modal-body-custom{
+        max-width: 700px;
+        .bamboo-wrapper .splitt, .black-wrapper .splitt, .mahoghany-wrapper .splitt{
+            flex-direction: row;
+        }
+        .content .card-default .splitt > span{
+            margin-left: 1rem;
+        }
+
+        .content .card-default{
+            position: relative;
+        }
+        .content .card-default >.left{
+            position: absolute;
+            top: 1rem;
+            right: 1rem;
+        }
+
+        // Pledge-entry section
+        .content .card-default .pledge-entry{
+            padding: 1rem 0;
+        }
+        .content .pledge-entry .split{
+            display: flex;
+            justify-content: space-between;
+            padding: -3rem;
         }
     }
-    .stat-sec{   
-        border-right: none !important;
-    } 
-   
 
 }
+
+
+
+
 @media  screen and (max-width: $mobile){
-    .image-div nav{
-        padding: 0 1rem; 
-    }
-    // bookmark card
+   
     main .body-custom .btn-wrapper{
         position: relative;
     }

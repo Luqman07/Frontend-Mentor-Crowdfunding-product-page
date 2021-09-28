@@ -2,7 +2,8 @@ const modal = document.getElementById('myModal')
 const btn = document.getElementById('btn')
 const clo = document.querySelector('.close')
 const checker = document.querySelectorAll('.put')
-
+const navTogLabel = document.querySelector('.nav-toggle-label')
+let toggleChecker = document.getElementById('nav-toggle')
 
 btn.addEventListener('click', () => {
     modal.style.display = 'block'
@@ -38,3 +39,14 @@ checker.forEach(element => {
         }
     })
 });
+
+navTogLabel.addEventListener('click', (e)=>{
+    let icon = navTogLabel.querySelector('.fa-lg')
+    if (e.target.classList.contains('fa-bars')) {
+        icon.classList.remove('fa-bars')
+        icon.classList.add('fa-times')
+    }else{
+        icon.classList.remove('fa-times')
+        icon.classList.add('fa-bars')
+    }
+})
