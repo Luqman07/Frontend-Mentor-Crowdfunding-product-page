@@ -8,16 +8,16 @@ $tablet: 750px;
 $mobile: 450px;
 $font-fam: 'Commissioner', sans-serif;
 
-@mixin button($bg-color, $width, $height){
+@mixin button($bg-color, $width, $height, $text-color, $hover){
     border: none;
     outline: none;
     border-radius: 50px;
     width: $width;
     height: $height;
-    color: #fff;
+    color: $text-color;
     background-color: $bg-color;
     &:hover{
-        background-color: $active-state;
+        background-color: $hover;
     }
 
 }
@@ -125,27 +125,27 @@ main{
                 position: relative;
 
             }
-            section button{
-                border: none;
-                outline: none;
-                border-radius: 50px;
-                width: 11rem;
-                height: 3.6rem;
-            }
+            // section button{
+            //     border: none;
+            //     outline: none;
+            //     border-radius: 50px;
+            //     width: 11rem;
+            //     height: 3.6rem;
+            // }
             
             section .btn1{
-                background-color: $default-state;
+                @include button($default-state, 11rem, 3.6rem, #fff, $active-state);
                 font-size: .85rem;
             }
-            section .btn1:hover{
-                background-color: $active-state;
-            }
+            // section .btn1:hover{
+            //     background-color: $active-state;
+            // }
             section .btn-wrapper{
                 position: relative;
                 
             }
             section .btn-wrapper .btn2{
-                background-color: #f1f1f1;
+                @include button(#f1f1f1, 11rem, 3.6rem, #000, none);
                 font-weight: bold;
                 padding: 0 1.5rem 0 4.5rem;
             }
@@ -191,21 +191,14 @@ main{
         width: 12rem;
     }
     .card-custom3 button{
-        border: none;
-        outline: none;
-        border-radius: 50px;
-        width: 10rem;
-        height: 3.2rem;
-        background-color: $default-state;
-        color: #fff;
         font-size: .9rem;
+        @include button($default-state, 10rem, 3.2rem, #fff, $active-state)
     }
 
     .modal-custom {
         display: none; /* Hidden by default */
         position: fixed; /* Stay in place */
         z-index: 1; /* Sit on top */
-        // padding-top: 2rem; /* Location of the box */
         padding: 2rem 1rem 0 1rem;
         left: 0;
         top: 0;
@@ -379,7 +372,7 @@ main{
                 }
             }
             button{
-                @include button($default-state, 6rem, 3rem)
+                @include button($default-state, 6rem, 3rem, #fff, $active-state)
             }
         }
     }

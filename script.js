@@ -5,11 +5,25 @@ const checker = document.querySelectorAll('.put')
 const navTogLabel = document.querySelector('.nav-toggle-label')
 let toggleChecker = document.getElementById('nav-toggle')
 const cont = document.querySelectorAll('.continue')
-let funds = 89914
-let moneyBacked = document.getElementById('money-backed')
-let totalBackers = document.getElementById('tot-backers')
-let daysLeft = document.getElementById('days-left')
-const gotIt = document.getElementById('got')
+let funds = 89914;
+let noOfBackers = 5007;
+let noOfDays = 56;
+let moneyBacked = document.getElementById('money-backed');
+let totalBackers = document.getElementById('tot-backers');
+const gotIt = document.getElementById('got');
+const bar = document.getElementById('bar')
+let widt = (funds/100000)*100
+bar.style.width = `${widt}%`
+const updateTotalBackers = ()=>{
+    noOfBackers += 1
+    totalBackers.innerHTML = noOfBackers  
+}
+
+const progressBar = (val)=>{
+    width = (val/100000)*100
+    width.toFixed(2) 
+    bar.style.width = `${width}%`
+}
 
 btn.addEventListener('click', () => {
     modal.style.display = 'block'
@@ -33,7 +47,7 @@ window.addEventListener("click", (e) => {
         modal.style.display = 'none'
     }
 })
-// checker.addEventListener('change',)
+
 
 checker.forEach(element => {
     let cardDefault;
@@ -45,8 +59,6 @@ checker.forEach(element => {
             cardDefault.classList.remove('card-border-grey')
             cardDefault.classList.add('card-border-green')
             pledgeEntry.classList.remove('d-none')
-            console.log(cardDefault.classList);
-
         } else {
             cardDefault = element.closest('.card-default')
             cardDefault.classList.remove('card-border-green')
@@ -57,7 +69,6 @@ checker.forEach(element => {
 });
 
 navTogLabel.addEventListener('click', (e) => {
-    console.log(e.target.parentElement);
     let icon = navTogLabel.querySelector('.fa-lg')
     if (e.target.classList.contains('fa-bars')) {
         icon.classList.remove('fa-bars')
@@ -81,5 +92,8 @@ cont.forEach(ele => {
         backProject.classList.toggle('d-none')
         modalComplete.classList.toggle('d-none')
         pledgeEntry.classList.add('d-none')
+        updateTotalBackers()
+        progressBar(parseInt(funds))
     })
 })
+

@@ -102,14 +102,13 @@ main .card-custom .body-custom p:nth-child(2) {
 main .card-custom .body-custom section {
   position: relative;
 }
-main .card-custom .body-custom section button {
+main .card-custom .body-custom section .btn1 {
   border: none;
   outline: none;
   border-radius: 50px;
   width: 11rem;
   height: 3.6rem;
-}
-main .card-custom .body-custom section .btn1 {
+  color: #fff;
   background-color: #3cb4ac;
   font-size: 0.85rem;
 }
@@ -120,9 +119,18 @@ main .card-custom .body-custom section .btn-wrapper {
   position: relative;
 }
 main .card-custom .body-custom section .btn-wrapper .btn2 {
+  border: none;
+  outline: none;
+  border-radius: 50px;
+  width: 11rem;
+  height: 3.6rem;
+  color: #000;
   background-color: #f1f1f1;
   font-weight: bold;
   padding: 0 1.5rem 0 4.5rem;
+}
+main .card-custom .body-custom section .btn-wrapper .btn2:hover {
+  background-color: none;
 }
 main .card-custom .body-custom .svg1 {
   position: absolute;
@@ -160,14 +168,17 @@ main .card-custom3 h1 {
   width: 12rem;
 }
 main .card-custom3 button {
+  font-size: 0.9rem;
   border: none;
   outline: none;
   border-radius: 50px;
   width: 10rem;
   height: 3.2rem;
-  background-color: #3cb4ac;
   color: #fff;
-  font-size: 0.9rem;
+  background-color: #3cb4ac;
+}
+main .card-custom3 button:hover {
+  background-color: #147b74;
 }
 main .modal-custom {
   display: none;
